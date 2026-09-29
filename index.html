@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erick Noé Sánchez Sánchez | Full-Stack Software Developer & Process Engineer</title>
+    <meta name="description" content="Full-Stack Software Developer, Team Leader & Process Engineer specializing in Manufacturing Execution Systems (MES), Lab Systems, and AI-assisted development.">
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    
+    <!-- Application Logic -->
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- SYSTEM BOOT LOADER -->
+    <div id="boot-loader" class="boot-loader">
+        <div class="loader-content">
+            <span class="mono-text label-sys">INITIALIZING SYSTEM_V1.2</span>
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <span class="mono-text status-text">LOADING DEPENDENCIES...</span>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="main-nav">
+        <div class="nav-brand mono-text">
+            <span class="dot-indicator"></span> ES.SYS_CORE
+        </div>
+        <div class="nav-links mono-text">
+            <a href="#about" class="nav-link">01.BRIDGE</a>
+            <a href="#projects" class="nav-link">02.IMPACT</a>
+            <a href="#architecture" class="nav-link">03.ARCHITECTURE</a>
+            <a href="#contact" class="nav-link">04.CONNECT</a>
+        </div>
+    </nav>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="badge-wrapper">
+                            <span class="mono-text badge">STATUS: DEPLOYED</span>
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="line-reveal">Full-Stack Software Developer.</span>
+                            <span class="line-reveal text-muted">Biotech Engineer.</span>
+                        </h1>
+                        <p class="hero-description reveal-text">
+                            Bridging physical operations and digital infrastructure. Specializing in Manufacturing Execution Systems (MES), LIMS, and automated bioprocess control under strict GxP standards.
+                        </p>
+                        <div class="hero-cta reveal-text">
+                            <a href="#projects" class="btn btn-primary mono-text">EXPLORE SYSTEMS &darr;</a>
+                            <a href="#contact" class="btn btn-outline mono-text">INITIATE CONTACT</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT SECTION (THE BRIDGE + PROFILE PHOTO A COLOR) -->
+            <section id="about" class="about-section">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-text-column">
+                            <span class="mono-text section-subtitle">01 // THE BIOTECH-SOFTWARE BRIDGE</span>
+                            <h2 class="section-title">Translating physical processes into resilient code.</h2>
+                            <p class="about-paragraph">
+                                Holding a Bachelor's degree in <strong>Biotechnology Engineering</strong>, my core advantage lies in understanding the complex biological constraints, variable interactions, and regulatory strictness of modern laboratory and manufacturing environments.
+                            </p>
+                            <p class="about-paragraph">
+                                As an Upstream Manufacturing Team Leader and Software Engineer at PROBIOMED, I own the end-to-end software lifecycle—architecting robust Python backends, reactive JavaScript frontends, and deploying to AWS infrastructure.
+                            </p>
+                            <div class="core-competencies mono-text">
+                                <div class="comp-item">> Python & Django ORM</div>
+                                <div class="comp-item">> Vanilla JS ES2024 & GSAP</div>
+                                <div class="comp-item">> PostgreSQL & Data Pipelines</div>
+                                <div class="comp-item">> AWS EC2, Nginx, Linux</div>
+                                <div class="comp-item">> AI-Native Dev (Claude/Gemini)</div>
+                            </div>
+                        </div>
+                        <div class="about-visual-column">
+                            <div class="profile-card">
+                                <div class="profile-img-wrapper">
+                                    <!-- REEMPLAZA 'profile.jpg' CON EL NOMBRE DE TU FOTO REAL A COLOR -->
+                                    <img src="Foto_Erick_P.jpeg" alt="Erick Noé Sánchez Sánchez" class="profile-photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'><rect width=\'400\' height=\'500\' fill=\'%2316161d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2300f0ff\' font-family=\'monospace\' font-size=\'16px\' font-weight=\'bold\'>ERICK_SANCHEZ_ID</text></svg>';">
+                                    <div class="profile-glow-overlay"></div>
+                                </div>
+                                <div class="profile-meta mono-text">
+                                    <span>LOC: TOLUCA, MX</span>
+                                    <span>ROLE: SR PROCESS ENGINEER</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS SECTION (PINNED LAYOUT WITH VIDEOS DE PROBIOMED) -->
+            <section id="projects" class="projects-section">
+                <div class="projects-container">
+                    
+                    <!-- LEFT COLUMN: SCROLLING CASE STUDIES -->
+                    <div class="projects-text-column">
+                        <div class="projects-header">
+                            <span class="mono-text section-subtitle">02 // PROVEN IMPACT</span>
+                            <h2 class="section-title">Production Systems</h2>
+                        </div>
+
+                        <!-- PROJECT 1: LIMS (VIDEO 1) -->
+                        <article class="project-card-item is-active" data-project="0">
+                            <span class="mono-text project-id">PROJ_01 // LIMS PLATFORM</span>
+                            <h3 class="project-name">Bioprocess Monitoring & LIMS System</h3>
+                            <div class="project-tags mono-text">
+                                <span>Python</span> • <span>JavaScript</span> • <span>PostgreSQL</span>
+                            </div>
+                            <div class="project-details">
+                                <p><strong>Problem:</strong> Fragmented manual tracking of critical physicochemical variables across concurrent biopharmaceutical batches in a regulated GxP environment.</p>
+                                <p><strong>Engineering Solution:</strong> Architected a full-stack electronic monitoring system tracking 50 concurrent physicochemical parameters across 12 simultaneous bioprocess batches.</p>
+                                <p><strong>Result:</strong> Eliminated transcription errors, automated compliance tracking, and established instant data visibility for plant leadership.</p>
+                            </div>
+                        </article>
+
+                        <!-- PROJECT 2: MES (VIDEO 2) -->
+                        <article class="project-card-item" data-project="1">
+                            <span class="mono-text project-id">PROJ_02 // MES PLATFORM</span>
+                            <h3 class="project-name">End-to-End Manufacturing Execution System</h3>
+                            <div class="project-tags mono-text">
+                                <span>AWS (EC2/S3)</span> • <span>Nginx/Gunicorn</span> • <span>CI/CD</span>
+                            </div>
+                            <div class="project-details">
+                                <p><strong>Problem:</strong> Operational bottlenecks and yield inconsistencies in upstream biopharmaceutical manufacturing workflows.</p>
+                                <p><strong>Engineering Solution:</strong> Gathered plant stakeholder requirements, engineered backend optimization routines in Python, and deployed zero-downtime Linux cloud infrastructure using GitHub Actions.</p>
+                                <p><strong>Result:</strong> Achieved a <strong>100% increase in product yield</strong> and a <strong>9% reduction in operational losses</strong> via automated bottleneck detection.</p>
+                            </div>
+                        </article>
+
+                        <!-- PROJECT 3: AI WORKFLOW -->
+                        <article class="project-card-item" data-project="2">
+                            <span class="mono-text project-id">PROJ_03 // AI WORKFLOW</span>
+                            <h3 class="project-name">AI-Native Compliant SDLC Pipeline</h3>
+                            <div class="project-tags mono-text">
+                                <span>Prompt Engineering</span> • <span>Claude / Gemini</span> • <span>Validation</span>
+                            </div>
+                            <div class="project-details">
+                                <p><strong>Problem:</strong> High time-to-delivery for internal tooling and deviation dashboards under rigorous FDA/ISO validation timelines.</p>
+                                <p><strong>Engineering Solution:</strong> Integrated AI coding agents into a strict engineering review loop to accelerate boilerplate generation, data-model scaffolding, and automated unit testing.</p>
+                                <p><strong>Result:</strong> Accelerated internal tool delivery velocity by 3x while strictly maintaining GxP compliance and audit trail requirements.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- RIGHT COLUMN: PINNED MEDIA CONTAINER (VIDEOS) -->
+                    <div class="projects-media-column" id="media-container">
+                        <div class="media-viewport">
+                            
+                            <!-- MEDIA 1: VIDEO 1 (PROBIOMED LIMS) -->
+                            <div class="media-layer active" id="layer-0">
+                                <div class="video-container">
+                                    <!-- REEMPLAZA 'tu_video_lims.mp4' CON TU ARCHIVO DE VIDEO REAL -->
+                                    <video autoplay loop muted playsinline class="media-element">
+                                        <source src="Manage_sistem.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-overlay-grid"></div>
+                                </div>
+                                <div class="media-caption mono-text">
+                                    <span class="live-dot"></span> FEED: LIMS_TRACKING
+                                </div>
+                            </div>
+
+                            <!-- MEDIA 2: VIDEO 2 (PROBIOMED MES) -->
+                            <div class="media-layer" id="layer-1">
+                                <div class="video-container">
+                                    <!-- REEMPLAZA 'tu_video_mes.mp4' CON TU ARCHIVO DE VIDEO REAL -->
+                                    <video autoplay loop muted playsinline class="media-element">
+                                        <source src="MES.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-overlay-grid"></div>
+                                </div>
+                                <div class="media-caption mono-text">
+                                    <span class="live-dot"></span> FEED: MES_EXECUTION
+                                </div>
+                            </div>
+
+                            <!-- MEDIA 3: AI WORKFLOW CONCEPT -->
+                            <div class="media-layer" id="layer-2">
+                                <div class="code-preview-box">
+                                    <div class="code-header mono-text">
+                                        <span>AI_SWARM_PIPELINE.py</span>
+                                        <span class="status-ok">SECURE // GxP</span>
+                                    </div>
+                                    <pre class="code-content mono-text"><code>def audit_manufacturing_batch(batch_id):
+    """
+    AI-assisted bioprocess telemetry review.
+    Evaluates 50+ concurrent parameters against specs.
+    """
+    telemetry = DB.fetch_timeseries(batch_id)
+    analysis = AIAgent.evaluate(telemetry, threshold=0.99)
+    
+    if analysis.has_deviations:
+        trigger_deviation_dashboard(analysis.report)
+        return False
+    return certify_batch_release()</code></pre>
+                                </div>
+                                <div class="media-caption mono-text">
+                                    <span>ARCH: AI-NATIVE_DEV_WORKFLOW</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ARCHITECTURE & SYSTEM DESIGN -->
+            <section id="architecture" class="arch-section">
+                <div class="container">
+                    <div class="arch-header">
+                        <span class="mono-text section-subtitle">03 // SYSTEM DESIGN</span>
+                        <h2 class="section-title">Scalable Enterprise Architecture</h2>
+                        <p class="section-desc">How data flows from physical bioreactors to cloud-native dashboards.</p>
+                    </div>
+                    <div class="arch-flow-grid mono-text">
+                        <div class="arch-node">
+                            <div class="node-id">01 // SOURCE</div>
+                            <h3>Physical Sensors</h3>
+                            <p>Temperature, pH, Dissolved Oxygen, Feed Rates.</p>
+                        </div>
+                        <div class="arch-arrow">&rarr;</div>
+                        <div class="arch-node">
+                            <div class="node-id">02 // INGESTION</div>
+                            <h3>Python Backend</h3>
+                            <p>RESTful APIs, validation, time-series data modeling.</p>
+                        </div>
+                        <div class="arch-arrow">&rarr;</div>
+                        <div class="arch-node">
+                            <div class="node-id">03 // PERSISTENCE</div>
+                            <h3>PostgreSQL</h3>
+                            <p>Relational tables, audit logs, secure record retention.</p>
+                        </div>
+                        <div class="arch-arrow">&rarr;</div>
+                        <div class="arch-node">
+                            <div class="node-id">04 // INTERFACE</div>
+                            <h3>Vanilla JS / GSAP</h3>
+                            <p>Responsive dashboards, real-time alerts, zero-framework speed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="contact-section">
+                <div class="container text-center">
+                    <span class="mono-text section-subtitle">04 // HANDOFF</span>
+                    <h2 class="section-title">Let's build resilient systems together.</h2>
+                    <p class="contact-description">
+                        Open for Software Engineering opportunities at Helix. Let's discuss how my biotech background and full-stack execution can empower your engineering teams.
+                    </p>
+                    <div class="contact-actions">
+                        <a href="mailto:ericknoess@gmail.com" class="btn btn-primary mono-text">ericknoess@gmail.com</a>
+                        <a href="tel:+527225107724" class="btn btn-outline mono-text">+52 722 510 7724</a>
+                    </div>
+                    <div class="footer-meta mono-text">
+                        <span>DESIGNED & ENGINEERED BY ERICK SÁNCHEZ</span>
+                        <span>STACK: HTML5 // CSS3 // VANILLA JS // GSAP // PYTHON // AWS</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
