@@ -1,7 +1,7 @@
 /**
  * PORTFOLIO APPLICATION LOGIC - ERICK SÁNCHEZ
  * Architecture: Module Pattern / IIFE
- * Technologies: Vanilla JS (ES6+), GSAP, ScrollTrigger
+ * Technologies: Vanilla JS (ES6+), GSAP, ScrollTrigger (Mobile-Aware)
  */
 
 const PortfolioApp = (() => {
@@ -56,14 +56,16 @@ const PortfolioApp = (() => {
         }, "-=0.6");
     };
 
-    // --- 3. SCROLLTRIGGER SYSTEM ---
+    // --- 3. RESPONSIVE SCROLLTRIGGER SYSTEM ---
     const initScrollTriggers = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         ScrollTrigger.matchMedia({
+            // DESKTOP: Activa pinning y sincronización de capas flotantes
             "(min-width: 961px)": function() {
                 setupProjectPinning();
             },
+            // MOBILE / TABLET: Flujo natural sin pin ni bloqueos
             "(max-width: 960px)": function() {
                 setupMobileProjects();
             }
@@ -74,12 +76,12 @@ const PortfolioApp = (() => {
             gsap.from(section, {
                 scrollTrigger: {
                     trigger: section,
-                    start: "top 80%",
+                    start: "top 85%",
                     toggleActions: "play none none none"
                 },
-                y: 40,
+                y: 30,
                 opacity: 0,
-                duration: 1,
+                duration: 0.8,
                 ease: "power3.out"
             });
         });
@@ -129,7 +131,7 @@ const PortfolioApp = (() => {
         });
     };
 
-    // --- 5. MOBILE FALLBACK ---
+    // --- 5. MOBILE FALLBACK (INTERACCIÓN FLUIDA) ---
     const setupMobileProjects = () => {
         const cards = gsap.utils.toArray(config.selectors.projectCards);
         cards.forEach(card => {

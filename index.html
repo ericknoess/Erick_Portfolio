@@ -71,7 +71,7 @@
                 </div>
             </section>
 
-            <!-- ABOUT SECTION (THE BRIDGE + PROFILE PHOTO A COLOR) -->
+            <!-- ABOUT SECTION -->
             <section id="about" class="about-section">
                 <div class="container">
                     <div class="about-grid">
@@ -95,7 +95,6 @@
                         <div class="about-visual-column">
                             <div class="profile-card">
                                 <div class="profile-img-wrapper">
-                                    <!-- REEMPLAZA 'profile.jpg' CON EL NOMBRE DE TU FOTO REAL A COLOR -->
                                     <img src="Foto_Erick_P.jpeg" alt="Erick Noé Sánchez Sánchez" class="profile-photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'><rect width=\'400\' height=\'500\' fill=\'%2316161d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2300f0ff\' font-family=\'monospace\' font-size=\'16px\' font-weight=\'bold\'>ERICK_SANCHEZ_ID</text></svg>';">
                                     <div class="profile-glow-overlay"></div>
                                 </div>
@@ -109,7 +108,7 @@
                 </div>
             </section>
 
-            <!-- PROJECTS SECTION (PINNED LAYOUT WITH VIDEOS DE PROBIOMED) -->
+            <!-- PROJECTS SECTION (ADAPTIVE MOBILE/DESKTOP LAYOUT) -->
             <section id="projects" class="projects-section">
                 <div class="projects-container">
                     
@@ -120,7 +119,7 @@
                             <h2 class="section-title">Production Systems</h2>
                         </div>
 
-                        <!-- PROJECT 1: LIMS (VIDEO 1) -->
+                        <!-- PROJECT 1: LIMS -->
                         <article class="project-card-item is-active" data-project="0">
                             <span class="mono-text project-id">PROJ_01 // LIMS PLATFORM</span>
                             <h3 class="project-name">Bioprocess Monitoring & LIMS System</h3>
@@ -132,9 +131,24 @@
                                 <p><strong>Engineering Solution:</strong> Architected a full-stack electronic monitoring system tracking 50 concurrent physicochemical parameters across 12 simultaneous bioprocess batches.</p>
                                 <p><strong>Result:</strong> Eliminated transcription errors, automated compliance tracking, and established instant data visibility for plant leadership.</p>
                             </div>
+                            <!-- MOBILE MEDIA EMBED (Visible only on mobile for perfect contextual flow) -->
+                            <div class="mobile-media-embed">
+                                <div class="media-viewport">
+                                    <div class="video-container">
+                                        <video autoplay loop muted playsinline class="media-element">
+                                            <source src="Manage_sistem.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <div class="video-overlay-grid"></div>
+                                    </div>
+                                    <div class="media-caption mono-text">
+                                        <span class="live-dot"></span> FEED: LIMS_TRACKING
+                                    </div>
+                                </div>
+                            </div>
                         </article>
 
-                        <!-- PROJECT 2: MES (VIDEO 2) -->
+                        <!-- PROJECT 2: MES -->
                         <article class="project-card-item" data-project="1">
                             <span class="mono-text project-id">PROJ_02 // MES PLATFORM</span>
                             <h3 class="project-name">End-to-End Manufacturing Execution System</h3>
@@ -145,6 +159,21 @@
                                 <p><strong>Problem:</strong> Operational bottlenecks and yield inconsistencies in upstream biopharmaceutical manufacturing workflows.</p>
                                 <p><strong>Engineering Solution:</strong> Gathered plant stakeholder requirements, engineered backend optimization routines in Python, and deployed zero-downtime Linux cloud infrastructure using GitHub Actions.</p>
                                 <p><strong>Result:</strong> Achieved a <strong>100% increase in product yield</strong> and a <strong>9% reduction in operational losses</strong> via automated bottleneck detection.</p>
+                            </div>
+                            <!-- MOBILE MEDIA EMBED -->
+                            <div class="mobile-media-embed">
+                                <div class="media-viewport">
+                                    <div class="video-container">
+                                        <video autoplay loop muted playsinline class="media-element">
+                                            <source src="MES.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <div class="video-overlay-grid"></div>
+                                    </div>
+                                    <div class="media-caption mono-text">
+                                        <span class="live-dot"></span> FEED: MES_EXECUTION
+                                    </div>
+                                </div>
                             </div>
                         </article>
 
@@ -160,17 +189,37 @@
                                 <p><strong>Engineering Solution:</strong> Integrated AI coding agents into a strict engineering review loop to accelerate boilerplate generation, data-model scaffolding, and automated unit testing.</p>
                                 <p><strong>Result:</strong> Accelerated internal tool delivery velocity by 3x while strictly maintaining GxP compliance and audit trail requirements.</p>
                             </div>
+                            <!-- MOBILE MEDIA EMBED -->
+                            <div class="mobile-media-embed">
+                                <div class="media-viewport">
+                                    <div class="code-preview-box">
+                                        <div class="code-header mono-text">
+                                            <span>AI_SWARM_PIPELINE.py</span>
+                                            <span class="status-ok">SECURE // GxP</span>
+                                        </div>
+                                        <pre class="code-content mono-text"><code>def audit_batch(batch_id):
+    telemetry = DB.fetch_timeseries(batch_id)
+    analysis = AIAgent.evaluate(telemetry)
+    if analysis.has_deviations:
+        trigger_dashboard(analysis.report)
+        return False
+    return certify_batch()</code></pre>
+                                    </div>
+                                    <div class="media-caption mono-text">
+                                        <span>ARCH: AI-NATIVE_DEV_WORKFLOW</span>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                     </div>
 
-                    <!-- RIGHT COLUMN: PINNED MEDIA CONTAINER (VIDEOS) -->
-                    <div class="projects-media-column" id="media-container">
+                    <!-- RIGHT COLUMN: DESKTOP PINNED MEDIA CONTAINER -->
+                    <div class="projects-media-column desktop-media-container" id="media-container">
                         <div class="media-viewport">
                             
-                            <!-- MEDIA 1: VIDEO 1 (PROBIOMED LIMS) -->
+                            <!-- MEDIA 1: VIDEO 1 -->
                             <div class="media-layer active" id="layer-0">
                                 <div class="video-container">
-                                    <!-- REEMPLAZA 'tu_video_lims.mp4' CON TU ARCHIVO DE VIDEO REAL -->
                                     <video autoplay loop muted playsinline class="media-element">
                                         <source src="Manage_sistem.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
@@ -182,10 +231,9 @@
                                 </div>
                             </div>
 
-                            <!-- MEDIA 2: VIDEO 2 (PROBIOMED MES) -->
+                            <!-- MEDIA 2: VIDEO 2 -->
                             <div class="media-layer" id="layer-1">
                                 <div class="video-container">
-                                    <!-- REEMPLAZA 'tu_video_mes.mp4' CON TU ARCHIVO DE VIDEO REAL -->
                                     <video autoplay loop muted playsinline class="media-element">
                                         <source src="MES.mp4" type="video/mp4">
                                         Your browser does not support the video tag.

@@ -1,6 +1,6 @@
 /* ==========================================================================
    CSS ARCHITECTURE: PORTFOLIO ERICK SÁNCHEZ (HELIX TARGETED)
-   Clinical Dark Mode + Precision Typography + True Color Profile
+   Clinical Dark Mode + Precision Typography + Mobile Video Layout
    ========================================================================== */
 
    :root {
@@ -18,9 +18,9 @@
     --font-mono: 'JetBrains Mono', monospace;
 
     --space-sm: 1rem;
-    --space-md: 2.5rem;
-    --space-lg: 5rem;
-    --space-xl: 10rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
     --max-width: 1280px;
 }
 
@@ -50,7 +50,7 @@ h1, h2, h3, h4 {
 
 .mono-text {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -66,7 +66,7 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
 }
@@ -89,11 +89,11 @@ h1, h2, h3, h4 {
 }
 .loader-content {
     text-align: center;
-    width: 300px;
+    width: 280px;
 }
 .label-sys, .status-text {
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 .progress-bar-track {
     width: 100%;
@@ -113,13 +113,13 @@ h1, h2, h3, h4 {
 .main-nav {
     position: fixed;
     top: 0; left: 0; width: 100%;
-    padding: 1.5rem var(--space-md);
+    padding: 1.2rem var(--space-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     backdrop-filter: blur(12px);
-    background: rgba(7, 7, 10, 0.75);
+    background: rgba(7, 7, 10, 0.85);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 .nav-brand {
@@ -136,7 +136,7 @@ h1, h2, h3, h4 {
 }
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 .nav-link {
     color: var(--text-muted);
@@ -164,7 +164,7 @@ h1, h2, h3, h4 {
     margin-bottom: 1.5rem;
 }
 .hero-title {
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(2.4rem, 6vw, 5.5rem);
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
 }
@@ -173,13 +173,14 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 .hero-description {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--text-muted);
     max-width: 650px;
     margin-bottom: 2.5rem;
 }
 .hero-cta {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -188,10 +189,10 @@ h1, h2, h3, h4 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.9rem 2rem;
+    padding: 0.85rem 1.75rem;
     border-radius: 4px;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-primary {
@@ -213,7 +214,7 @@ h1, h2, h3, h4 {
     color: var(--accent-cyan);
 }
 
-/* --- ABOUT SECTION (THE BRIDGE + TRUE COLOR PHOTO) --- */
+/* --- ABOUT SECTION --- */
 .about-section {
     padding: var(--space-xl) 0;
     background-color: var(--bg-surface);
@@ -229,7 +230,7 @@ h1, h2, h3, h4 {
 .about-paragraph {
     color: var(--text-muted);
     margin-bottom: 1.25rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 .about-paragraph strong {
     color: var(--text-primary);
@@ -240,7 +241,7 @@ h1, h2, h3, h4 {
     gap: 0.75rem;
     margin-top: 2rem;
     color: var(--accent-cyan);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 .profile-card {
     background: var(--bg-card);
@@ -249,10 +250,6 @@ h1, h2, h3, h4 {
     overflow: hidden;
     padding: 1rem;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    transition: border-color 0.3s ease;
-}
-.profile-card:hover {
-    border-color: var(--accent-cyan);
 }
 .profile-img-wrapper {
     position: relative;
@@ -261,20 +258,13 @@ h1, h2, h3, h4 {
     border-radius: 4px;
     overflow: hidden;
     background: var(--bg-surface);
-    transform: translateZ(0);
-    will-change: transform;
 }
 .profile-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* FOTO A COLOR (TRUE COLOR) SIN FILTRO DE GRIS */
     filter: contrast(105%) saturate(105%);
-    transition: transform 0.5s ease;
     display: block;
-}
-.profile-card:hover .profile-photo {
-    transform: scale(1.03);
 }
 .profile-glow-overlay {
     position: absolute;
@@ -287,10 +277,10 @@ h1, h2, h3, h4 {
     justify-content: space-between;
     padding-top: 1rem;
     color: var(--text-muted);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 }
 
-/* --- PROJECTS SECTION (PINNED LAYOUT) --- */
+/* --- PROJECTS SECTION --- */
 .projects-section {
     position: relative;
     background-color: var(--bg-base);
@@ -313,7 +303,7 @@ h1, h2, h3, h4 {
 .project-card-item {
     padding: 3rem 0;
     border-top: 1px solid var(--border-color);
-    opacity: 0.35;
+    opacity: 0.4;
     transition: opacity 0.4s ease;
 }
 .project-card-item.is-active {
@@ -325,24 +315,31 @@ h1, h2, h3, h4 {
     margin-bottom: 0.5rem;
 }
 .project-name {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     margin-bottom: 1rem;
 }
 .project-tags {
     color: var(--text-muted);
     margin-bottom: 1.5rem;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 .project-details p {
     color: var(--text-muted);
     margin-bottom: 1rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 .project-details strong {
     color: var(--text-primary);
 }
 
-/* Media Column (Pinned) */
+/* Mobile Media Embed (Oculto en desktop, visible en móvil) */
+.mobile-media-embed {
+    display: none;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+/* Media Column Desktop (Visible en desktop, oculto en móvil) */
 .projects-media-column {
     width: 50%;
     height: 100vh;
@@ -366,7 +363,7 @@ h1, h2, h3, h4 {
     top: 0; left: 0; width: 100%; height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -398,10 +395,10 @@ h1, h2, h3, h4 {
     background: rgba(11, 11, 16, 0.85);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border-color);
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.9rem;
     border-radius: 4px;
     color: var(--accent-cyan);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -420,11 +417,11 @@ h1, h2, h3, h4 {
     100% { opacity: 1; }
 }
 
-/* Code Preview Box for Project 3 */
+/* Code Preview Box */
 .code-preview-box {
     width: 100%; height: 100%;
     background: #0c0c10;
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
 }
@@ -434,17 +431,17 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.75rem;
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 .status-ok {
     color: #00ff66;
 }
 .code-content {
-    padding-top: 1.25rem;
+    padding-top: 1rem;
     color: #a5d6ff;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     overflow-x: auto;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* --- ARCHITECTURE SECTION --- */
@@ -471,24 +468,24 @@ h1, h2, h3, h4 {
 }
 .node-id {
     color: var(--accent-cyan);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     margin-bottom: 0.5rem;
 }
 .arch-node h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 0.5rem;
     font-family: var(--font-sans);
     text-transform: none;
 }
 .arch-node p {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: none;
 }
 .arch-arrow {
     text-align: center;
     color: var(--accent-cyan);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 /* --- CONTACT SECTION --- */
@@ -501,42 +498,71 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     max-width: 600px;
     margin: 1.5rem auto 3rem auto;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 .contact-actions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 .footer-meta {
     color: var(--text-muted);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* ==========================================================================
+   MOBILE & TABLET ADAPTIVE OVERRIDES (MAX-WIDTH: 960px)
+   ========================================================================== */
 @media (max-width: 960px) {
-    .about-grid, .projects-container, .arch-flow-grid {
+    .about-grid, 
+    .arch-flow-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
-    .projects-text-column, .projects-media-column {
+
+    .projects-container {
+        flex-direction: column;
+    }
+
+    .projects-text-column {
         width: 100%;
+        padding-right: 0;
     }
-    .projects-media-column {
-        height: auto;
-        padding: 2rem 0;
+
+    /* Ocultamos el contenedor sticky de escritorio en móvil */
+    .desktop-media-container {
+        display: none !important;
     }
-    .media-viewport {
+
+    /* Mostramos los videos de forma secuencial y fluida en cada tarjeta de proyecto */
+    .mobile-media-embed {
+        display: block;
+    }
+
+    .mobile-media-embed .media-viewport {
         aspect-ratio: 16/9;
+        max-height: 280px;
     }
+
     .arch-arrow {
         display: none;
     }
+
     .nav-links {
         display: none;
+    }
+
+    .hero-section {
+        padding-top: 7rem;
+    }
+
+    .core-competencies {
+        grid-template-columns: 1fr;
     }
 }
 
