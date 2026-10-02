@@ -1,7 +1,7 @@
 /**
  * PORTFOLIO APPLICATION LOGIC - ERICK SÁNCHEZ
  * Architecture: Module Pattern / IIFE
- * Technologies: Vanilla JS (ES6+), GSAP, ScrollTrigger (Mobile-Aware)
+ * Technologies: Vanilla JS (ES6+), GSAP, ScrollTrigger (Video Autoplay Sync)
  */
 
 const PortfolioApp = (() => {
@@ -21,7 +21,10 @@ const PortfolioApp = (() => {
     // --- 2. BOOT SEQUENCE & INTRO ANIMATIONS ---
     const initBootSequence = () => {
         const tl = gsap.timeline({
-            onComplete: initScrollTriggers
+            onComplete: () => {
+                initScrollTriggers();
+                initVideoObservers(); // Asegura la reproducción de videos al cargar y entrar en vista
+            }
         });
 
         tl.to(config.selectors.progressBar, {
@@ -119,19 +122,22 @@ const PortfolioApp = (() => {
         });
 
         layers.forEach((layer, i) => {
+            const videoEl = layer.querySelector('video');
             if (i === activeIndex) {
                 layer.classList.add('active');
-                const videoEl = layer.querySelector('video');
-                if (videoEl && videoEl.paused) {
-                    videoEl.play().catch(err => console.log("Autoplay restriction handled:", err));
+                if (videoEl) {
+                    playVideoSafely(videoEl);
                 }
             } else {
                 layer.classList.remove('active');
+                if (videoEl) {
+                    videoEl.pause();
+                }
             }
         });
     };
 
-    // --- 5. MOBILE FALLBACK (INTERACCIÓN FLUIDA) ---
+    // --- 5. MOBILE FALLBACK & VIDEO OBSERVER ---
     const setupMobileProjects = () => {
         const cards = gsap.utils.toArray(config.selectors.projectCards);
         cards.forEach(card => {
@@ -141,6 +147,42 @@ const PortfolioApp = (() => {
                 toggleClass: "is-active"
             });
         });
+    };
+
+    // Intersection Observer robusto para garantizar reproducción automática de videos móviles cuando entran al viewport
+    const initVideoObservers = () => {
+        const allVideos = document.querySelectorAll('video');
+        
+        const observerOptions = {
+            root: null,
+            threshold: 0.25 // Se activa cuando al menos el 25% del video es visible
+        };
+
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    playVideoSafely(video);
+                } else {
+                    video.pause();
+                }
+            });
+        }, observerOptions);
+
+        allVideos.forEach(video => {
+            videoObserver.observe(video);
+        });
+    };
+
+    // Función auxiliar para manejar promesas de reproducción y evitar excepciones del navegador
+    const playVideoSafely = (videoElement) => {
+        if (!videoElement) return;
+        const playPromise = videoElement.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Autoplay prevented or interrupted by browser policy:", error);
+            });
+        }
     };
 
     // --- PUBLIC INITIALIZATION API ---

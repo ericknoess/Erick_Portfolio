@@ -1,6 +1,6 @@
 /* ==========================================================================
    CSS ARCHITECTURE: PORTFOLIO ERICK SÁNCHEZ (HELIX TARGETED)
-   Clinical Dark Mode + Precision Typography + Hero Spacing Fixed
+   Clinical Dark Mode + Precision Typography + Video Sync Ready
    ========================================================================== */
 
    :root {
@@ -147,12 +147,12 @@ h1, h2, h3, h4 {
     color: var(--accent-cyan);
 }
 
-/* --- HERO SECTION (Ajustado para dar más aire superior y evitar cortes) --- */
+/* --- HERO SECTION --- */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 9rem; /* Incrementado para evitar proximidad con la barra de navegación */
+    padding-top: 9rem;
     padding-bottom: 4rem;
 }
 .badge {
@@ -177,7 +177,7 @@ h1, h2, h3, h4 {
     font-size: clamp(0.95rem, 1.8vw, 1.15rem);
     color: var(--text-muted);
     max-width: 650px;
-    margin-bottom: 2rem; /* Margen superior controlado respecto a los botones */
+    margin-bottom: 2rem;
 }
 .hero-cta {
     display: flex;
@@ -558,7 +558,7 @@ h1, h2, h3, h4 {
     }
 
     .hero-section {
-        padding-top: 8rem; /* Espaciado adaptado para móviles */
+        padding-top: 8rem;
     }
 
     .core-competencies {
